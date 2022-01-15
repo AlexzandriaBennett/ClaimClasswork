@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pkzVZZb5EH5y2KpfJzhBLRDcLNiXmJ5SgexoCDhfxiGRqaOPZDgKKiYMionkKvzdl1F24d0CZ27HlxpMv0bZMg==",
+  "dgSpecHash": "0EkwC7skZdKGpajT+UuoAfwHuDSrC0s/zZ3zNYCbq7Vett8m1rvR8GSmVoXKMzNdGMZRSaCYrE7jPonaJ9WOow==",
   "success": true,
-  "projectFilePath": "C:\\Code\\Classwork\\CoreDBImport\\CoreDBImport\\CoreDBImport.csproj",
+  "projectFilePath": "C:\\Code\\Classwork\\ClaimClasswork\\CoreDBImport\\CoreDBImport\\CoreDBImport.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AlexB\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\AlexB\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

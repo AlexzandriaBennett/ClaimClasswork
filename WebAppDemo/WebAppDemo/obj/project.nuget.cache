@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "50gvGoRx4UjLqvjVvnbX4Aczhi5aQQyLVJ8rHaeMOpZlaueTdx6XRgHrKSOEV+0R1QBE6mtDD8E4wnuEBkMkMQ==",
+  "dgSpecHash": "1Hr1ALtTTdUnh0hhSoSQbEWLZpXNo+r0dspEu1l+7LdMBC+9NoRFSLTpXxPVSVINfiekU0aKCDU5fmvPj68EdA==",
   "success": true,
-  "projectFilePath": "C:\\Code\\Classwork\\WebAppDemo\\WebAppDemo\\WebAppDemo.csproj",
+  "projectFilePath": "C:\\Code\\Classwork\\ClaimClasswork\\WebAppDemo\\WebAppDemo\\WebAppDemo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AlexB\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\AlexB\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

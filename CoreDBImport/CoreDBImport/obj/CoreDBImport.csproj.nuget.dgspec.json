@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Code\\Classwork\\CoreDBImport\\CoreDBImport\\CoreDBImport.csproj": {}
+    "C:\\Code\\Classwork\\ClaimClasswork\\CoreDBImport\\CoreDBImport\\CoreDBImport.csproj": {}
   },
   "projects": {
-    "C:\\Code\\Classwork\\CoreDBImport\\CoreDBImport\\CoreDBImport.csproj": {
+    "C:\\Code\\Classwork\\ClaimClasswork\\CoreDBImport\\CoreDBImport\\CoreDBImport.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Code\\Classwork\\CoreDBImport\\CoreDBImport\\CoreDBImport.csproj",
+        "projectUniqueName": "C:\\Code\\Classwork\\ClaimClasswork\\CoreDBImport\\CoreDBImport\\CoreDBImport.csproj",
         "projectName": "CoreDBImport",
-        "projectPath": "C:\\Code\\Classwork\\CoreDBImport\\CoreDBImport\\CoreDBImport.csproj",
+        "projectPath": "C:\\Code\\Classwork\\ClaimClasswork\\CoreDBImport\\CoreDBImport\\CoreDBImport.csproj",
         "packagesPath": "C:\\Users\\AlexB\\.nuget\\packages\\",
-        "outputPath": "C:\\Code\\Classwork\\CoreDBImport\\CoreDBImport\\obj\\",
+        "outputPath": "C:\\Code\\Classwork\\ClaimClasswork\\CoreDBImport\\CoreDBImport\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\AlexB\\AppData\\Roaming\\NuGet\\NuGet.Config",

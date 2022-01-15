@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Code\\Classwork\\WebAppDemo\\WebAppDemo\\WebAppDemo.csproj": {}
+    "C:\\Code\\Classwork\\ClaimClasswork\\WebAppDemo\\WebAppDemo\\WebAppDemo.csproj": {}
   },
   "projects": {
-    "C:\\Code\\Classwork\\WebAppDemo\\WebAppDemo\\WebAppDemo.csproj": {
+    "C:\\Code\\Classwork\\ClaimClasswork\\WebAppDemo\\WebAppDemo\\WebAppDemo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Code\\Classwork\\WebAppDemo\\WebAppDemo\\WebAppDemo.csproj",
+        "projectUniqueName": "C:\\Code\\Classwork\\ClaimClasswork\\WebAppDemo\\WebAppDemo\\WebAppDemo.csproj",
         "projectName": "WebAppDemo",
-        "projectPath": "C:\\Code\\Classwork\\WebAppDemo\\WebAppDemo\\WebAppDemo.csproj",
+        "projectPath": "C:\\Code\\Classwork\\ClaimClasswork\\WebAppDemo\\WebAppDemo\\WebAppDemo.csproj",
         "packagesPath": "C:\\Users\\AlexB\\.nuget\\packages\\",
-        "outputPath": "C:\\Code\\Classwork\\WebAppDemo\\WebAppDemo\\obj\\",
+        "outputPath": "C:\\Code\\Classwork\\ClaimClasswork\\WebAppDemo\\WebAppDemo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\AlexB\\AppData\\Roaming\\NuGet\\NuGet.Config",
