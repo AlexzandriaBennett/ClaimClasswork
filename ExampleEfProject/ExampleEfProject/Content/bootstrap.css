@@ -4255,6 +4255,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     float: left;
   }
 }
+
+.menuLength {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 200px;
+    height: 100px;
+}
 .navbar-collapse {
   padding-right: 15px;
   padding-left: 15px;
