@@ -11,7 +11,7 @@ namespace CoreDBImport.Models
     {
         public Course()
         {
-            StudentCourses = new HashSet<StudentCourse>();
+            Students = new HashSet<Student>();
         }
 
         [Key]
@@ -24,7 +24,9 @@ namespace CoreDBImport.Models
         [ForeignKey(nameof(TeacherId))]
         [InverseProperty("Courses")]
         public virtual Teacher Teacher { get; set; } = null!;
-        [InverseProperty(nameof(StudentCourse.Course))]
-        public virtual ICollection<StudentCourse> StudentCourses { get; set; }
+
+        [ForeignKey("CourseId")]
+        [InverseProperty(nameof(Student.Courses))]
+        public virtual ICollection<Student> Students { get; set; }
     }
 }

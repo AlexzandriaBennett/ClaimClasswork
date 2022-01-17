@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace CoreDBImport.Models
 {
     [Table("Staff")]
-    public partial class Staff
+    public partial class staff
     {
         [Key]
         public int Id { get; set; }

@@ -209,7 +209,6 @@ C:\Code\Classwork\ClaimClasswork\ExampleEfProject\ExampleEfProject\bin\Microsoft
 C:\Code\Classwork\ClaimClasswork\ExampleEfProject\ExampleEfProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Code\Classwork\ClaimClasswork\ExampleEfProject\ExampleEfProject\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Code\Classwork\ClaimClasswork\ExampleEfProject\ExampleEfProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Code\Classwork\ClaimClasswork\ExampleEfProject\ExampleEfProject\obj\Debug\ExampleEfProject.csproj.AssemblyReference.cache
 C:\Code\Classwork\ClaimClasswork\ExampleEfProject\ExampleEfProject\obj\Debug\ExampleEfProject.csproj.CoreCompileInputs.cache
 C:\Code\Classwork\ClaimClasswork\ExampleEfProject\ExampleEfProject\obj\Debug\ExampleEfProject.csproj.CopyComplete
 C:\Code\Classwork\ClaimClasswork\ExampleEfProject\ExampleEfProject\obj\Debug\ExampleEfProject.dll

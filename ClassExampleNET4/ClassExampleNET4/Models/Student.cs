@@ -15,5 +15,7 @@ namespace ClassExampleNET4.Models
         [Required]
         [StringLength(200)]
         public string Name { get; set; }
+
+        public string Score { get; set; }   
     }
 }
