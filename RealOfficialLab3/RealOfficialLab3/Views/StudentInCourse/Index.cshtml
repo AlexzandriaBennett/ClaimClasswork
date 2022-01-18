@@ -1,0 +1,29 @@
+﻿@model RealOfficialLab3.POCOs.StudentInCourse
+
+
+@{
+    ViewData["Title"] = "Index";
+    var tempCourse = Model.Course;
+    var tempStudents = Model.Students;
+
+}
+
+<h1>@tempCourse.Name</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th> Students: </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in tempStudents) {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
