@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Code\\Classwork\\RealOfficialLab3\\RealOfficialLab3\\RealOfficialLab3.csproj": {}
+    "C:\\Code\\Classwork\\ClaimClasswork\\RealOfficialLab3\\RealOfficialLab3\\RealOfficialLab3.csproj": {}
   },
   "projects": {
-    "C:\\Code\\Classwork\\RealOfficialLab3\\RealOfficialLab3\\RealOfficialLab3.csproj": {
+    "C:\\Code\\Classwork\\ClaimClasswork\\RealOfficialLab3\\RealOfficialLab3\\RealOfficialLab3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Code\\Classwork\\RealOfficialLab3\\RealOfficialLab3\\RealOfficialLab3.csproj",
+        "projectUniqueName": "C:\\Code\\Classwork\\ClaimClasswork\\RealOfficialLab3\\RealOfficialLab3\\RealOfficialLab3.csproj",
         "projectName": "RealOfficialLab3",
-        "projectPath": "C:\\Code\\Classwork\\RealOfficialLab3\\RealOfficialLab3\\RealOfficialLab3.csproj",
+        "projectPath": "C:\\Code\\Classwork\\ClaimClasswork\\RealOfficialLab3\\RealOfficialLab3\\RealOfficialLab3.csproj",
         "packagesPath": "C:\\Users\\AlexB\\.nuget\\packages\\",
-        "outputPath": "C:\\Code\\Classwork\\RealOfficialLab3\\RealOfficialLab3\\obj\\",
+        "outputPath": "C:\\Code\\Classwork\\ClaimClasswork\\RealOfficialLab3\\RealOfficialLab3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\AlexB\\AppData\\Roaming\\NuGet\\NuGet.Config",

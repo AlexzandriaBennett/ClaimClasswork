@@ -1,0 +1,42 @@
+﻿@model RealOfficialLab3.POCOs.EnrollStudentInCourse
+
+@{
+    ViewData["Title"] = "Index";
+    var tempCourse = Model.StudentInCourse.Course;
+    var selectList = Model.ListOfStudents;
+    var courseId = Model.StudentInCourse.Course.Id;
+
+}
+
+<h1>@tempCourse.Name</h1>
+
+@*<select name="studentId" asp-items="selectList"></select>*@
+@*<table class="table">
+    <thead>
+        <tr>
+            <th> Students: </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in tempStudents) {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+        </tr>
+}
+    </tbody>
+</table>*@
+
+@*<select asp-for="TeacherId" class="form-control" asp-items="ViewBag.TeacherId"></select>*@
+
+<form asp-action="Enroll">
+            <input type="hidden" asp-for="@courseId" />
+            <div class="form-group">
+                <label class="control-label"></label>
+                <select name="studentId" class="form-control" asp-items="selectList"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+ </form>

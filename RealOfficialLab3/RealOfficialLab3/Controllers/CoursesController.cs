@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RealOfficialLab3.Data;
 using RealOfficialLab3.Models;
+using RealOfficialLab3.POCOs;
 
 namespace RealOfficialLab3.Controllers
 {
@@ -66,6 +67,57 @@ namespace RealOfficialLab3.Controllers
             return View(course);
         }
 
+
+
+        //GET: Courses/Enroll
+        public async Task<IActionResult> Enroll(int? id)
+        {
+            // not doing the null check
+            // get list of all students
+            // get course name  
+            // return list of all students and course information 
+
+            var response = new StudentInCourse();
+            response.Course = await _context.Course.FindAsync(id);
+
+            response.Students = await _context.Student.ToListAsync();
+            // TODO: some of these students may have already enrolled. Figure out how to remove them from the list
+
+            //   public List<SelectListItem> Options { get; set; }
+            //public void OnGet()
+            //{
+            //    Options = context.Authors.Select(a =>
+            //                                  new SelectListItem
+            //                                  {
+            //                                      Value = a.AuthorId.ToString(),
+            //                                      Text = a.Name
+            //                                  }).ToList();
+            //}
+
+
+            List<SelectListItem> ListOfStudents = new List<SelectListItem>();
+
+            ListOfStudents = response.Students.Select(x => new SelectListItem
+            {
+
+                Value = x.Id.ToString(),
+                Text = x.Name,
+
+            }).ToList();
+
+            var response2 = new EnrollStudentInCourse();
+            response2.StudentInCourse = response;
+            response2.ListOfStudents = ListOfStudents;
+
+
+            return View(response2);
+
+        }
+
+
+
+
+
         // GET: Courses/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -80,6 +132,27 @@ namespace RealOfficialLab3.Controllers
                 return NotFound();
             }
             return View(course);
+        }
+
+
+        // POST: Courses/Enroll
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Enroll(int id, [Bind("courseId,studentId")] EnrollSubmit enroll)
+        {
+            var temprelationship = new StudentAndCourseRelationship();
+
+            temprelationship.CourseNumber = enroll.courseId;
+            temprelationship.StudentNumber = enroll.studentId;
+
+            //TODO: if the student and the course are already in the table, dont add 
+            // as of now might end up adding same student/course again and again
+
+            await _context.StudentAndCourseRelationship.AddAsync(temprelationship);
+            await _context.SaveChangesAsync();
+
+            //TODO: stay on page to add more students or click return to list
+            return RedirectToAction(nameof(Index));
         }
 
         // POST: Courses/Edit/5
