@@ -23,8 +23,10 @@ namespace OfficialLab3.Models
         [InverseProperty("Courses")]
         public virtual Teacher Teacher { get; set; } = null!;
 
+        public virtual Staff Staff { get; set; }
+
         [ForeignKey("CourseId")]
-        [InverseProperty(nameof(Student.Courses))]
+      //  [InverseProperty(nameof(Student.Courses))]
         public virtual ICollection<Student> Students { get; set; }
     }
 }

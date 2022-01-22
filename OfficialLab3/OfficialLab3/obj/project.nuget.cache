@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "34mXisA4wLrio7YTxvNOUWNaBfrZ4RKgxvElb9AIXMb2O7twq9NxNTrlS+Tr+AMHuoLWypT/A1ftl5Q+uK2DaA==",
+  "dgSpecHash": "pNV7Ne3OJWjrZQLVXPM8OVUvoW1Uz7ZO80nc/JluqUPydpMe3HYiY6IoBNoJNQuch/dKrKGkXg3lWIoFI789lQ==",
   "success": true,
-  "projectFilePath": "C:\\Code\\Classwork\\OfficialLab3\\OfficialLab3\\OfficialLab3.csproj",
+  "projectFilePath": "C:\\Code\\Classwork\\ClaimClasswork\\OfficialLab3\\OfficialLab3\\OfficialLab3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AlexB\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\AlexB\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

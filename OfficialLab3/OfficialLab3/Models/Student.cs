@@ -20,7 +20,7 @@ namespace OfficialLab3.Models
         public string Name { get; set; } = null!;
 
         [ForeignKey("StudentId")]
-        [InverseProperty(nameof(Course.Students))]
+       // [InverseProperty(nameof(Course.Students))]
         public virtual ICollection<Course> Courses { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿#nullable disable
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -23,7 +24,7 @@ namespace OfficialLab3.Controllers
         // GET: Courses
         public async Task<IActionResult> Index()
         {
-            var officialLab3Context = _context.Course.Include(c => c.Teacher);
+            var officialLab3Context = _context.Course.Include(c => c.Teacher).Include(s => s.Students);
             return View(await officialLab3Context.ToListAsync());
         }
 
@@ -37,6 +38,7 @@ namespace OfficialLab3.Controllers
 
             var course = await _context.Course
                 .Include(c => c.Teacher)
+                .Include(s => s.Students)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (course == null)
             {
@@ -49,7 +51,8 @@ namespace OfficialLab3.Controllers
         // GET: Courses/Create
         public IActionResult Create()
         {
-            ViewData["TeacherId"] = new SelectList(_context.Set<Teacher>(), "StaffId", "StaffId");
+            ViewData["Specialty"] = new SelectList(_context.Set<Teacher>(), "Specialty", "Specialty");
+            
             return View();
         }
 
@@ -177,48 +180,61 @@ namespace OfficialLab3.Controllers
             }
 
             var course = await _context.Course.FindAsync(id);
+            
             if (course == null)
             {
                 return NotFound();
             }
-            //ViewData["TeacherId"] = new SelectList(_context.Set<Teacher>(), "StaffId", "StaffId", course.TeacherId);
-            //ViewData["Name"] = new SelectList(_context.Set<Student>(), "Name");
+            ViewData["StudentId"] = new SelectList(_context.Set<Student>(), "Id", "Name", course.Students);
             return View(course);
         }
 
-        //// POST: Courses/Enroll/5
-        //// To protect from overposting attacks, enable the specific properties you want to bind to.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Enroll(int id, [Bind("Id,Name,TeacherId")] Course course)
-        //{
-        //    if (id != course.Id)
-        //    {
-        //        return NotFound();
-        //    }
+    //    // POST: Courses/Enroll/5
+    //    // To protect from overposting attacks, enable the specific properties you want to bind to.
+    //    [HttpPost]
+    //    [ValidateAntiForgeryToken]
+    //    public async Task<IActionResult> Enroll(int id, [Bind("Id,Name,Students")] Course course)
+    //    {
+    //        if (id != course.Id)
+    //        {
+    //            return NotFound();
+    //        }
 
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            _context.Update(course);
-        //            await _context.SaveChangesAsync();
-        //        }
-        //        catch (DbUpdateConcurrencyException)
-        //        {
-        //            if (!CourseExists(course.Id))
-        //            {
-        //                return NotFound();
-        //            }
-        //            else
-        //            {
-        //                throw;
-        //            }
-        //        }
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    ViewData["TeacherId"] = new SelectList(_context.Set<Teacher>(), "StaffId", "StaffId", course.TeacherId);
-        //    return View(course);
-        //}
+    //        if (ModelState.IsValid)
+    //        {
+    //            try
+    //            {
+    //                _context.Update(course);
+    //                await _context.SaveChangesAsync();
+    //            }
+    //            catch (DbUpdateConcurrencyException)
+    //            {
+    //                if (!CourseExists(course.Id))
+    //                {
+    //                    return NotFound();
+    //                }
+    //                else
+    //                {
+    //                    throw;
+    //                }
+    //            }
+    //            return RedirectToAction(nameof(Index));
+    //        }
+    //        var items = _context.Student.Select(e => new SelectListItem
+    //        {
+    //            Text = e.Name,
+    //            Value = e.Id.ToString(),
+    //        }).ToList();
+
+    //        items.Insert(0, new SelectListItem()
+    //        {
+    //            Text = "----Select----",
+    //            Value = string.Empty
+
+    //        });
+
+    //        ViewBag.Items = items;
+    //        return View(course);
+    //    }
     }
 }

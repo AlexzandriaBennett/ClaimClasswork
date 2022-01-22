@@ -49,10 +49,15 @@ namespace OfficialLab3.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(200)");
 
+                    b.Property<int>("StaffId")
+                        .HasColumnType("int");
+
                     b.Property<int>("TeacherId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("StaffId");
 
                     b.HasIndex("TeacherId");
 
@@ -139,11 +144,19 @@ namespace OfficialLab3.Migrations
 
             modelBuilder.Entity("OfficialLab3.Models.Course", b =>
                 {
+                    b.HasOne("OfficialLab3.Models.Staff", "Staff")
+                        .WithMany()
+                        .HasForeignKey("StaffId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("OfficialLab3.Models.Teacher", "Teacher")
                         .WithMany("Courses")
                         .HasForeignKey("TeacherId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Staff");
 
                     b.Navigation("Teacher");
                 });
