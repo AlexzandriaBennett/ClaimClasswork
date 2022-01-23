@@ -11,8 +11,8 @@ using OfficialLab3.Data;
 namespace OfficialLab3.Migrations
 {
     [DbContext(typeof(OfficialLab3Context))]
-    [Migration("20220122062206_removedstaffID")]
-    partial class removedstaffID
+    [Migration("20220123021752_addedcoulmn")]
+    partial class addedcoulmn
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

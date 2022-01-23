@@ -132,7 +132,7 @@ namespace EfExample2.Controllers
         }
 
 
-        // GET: Courses/Enroll/5
+       // GET: Courses/Enroll/5
         public ActionResult Enroll(int? id)
         {
             if (id == null)
@@ -144,7 +144,7 @@ namespace EfExample2.Controllers
             {
                 return HttpNotFound();
             }
-
+            //ViewData["StudentId"] = new SelectList(db.Students, "Id", "Name", course.Students);
             var items = db.Students.Select(e => new SelectListItem
             {
                 Text = e.Name,
@@ -158,8 +158,8 @@ namespace EfExample2.Controllers
 
             });
 
-            ViewBag.Items = items;
-
+            //ViewBag.Items = items;
+            ViewData["StudentId"] = items;
             return View(course);
         }
 

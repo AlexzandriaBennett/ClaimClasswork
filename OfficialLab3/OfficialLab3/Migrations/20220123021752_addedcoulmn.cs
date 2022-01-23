@@ -4,16 +4,16 @@
 
 namespace OfficialLab3.Migrations
 {
-    public partial class test : Migration
+    public partial class addedcoulmn : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            
+
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            
+
         }
     }
 }

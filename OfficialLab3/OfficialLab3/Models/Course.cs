@@ -19,6 +19,8 @@ namespace OfficialLab3.Models
         public string? Name { get; set; }
         public int TeacherId { get; set; }
 
+        public int StaffId { get; set; }    
+        
         [ForeignKey(nameof(TeacherId))]
         [InverseProperty("Courses")]
         public virtual Teacher Teacher { get; set; } = null!;

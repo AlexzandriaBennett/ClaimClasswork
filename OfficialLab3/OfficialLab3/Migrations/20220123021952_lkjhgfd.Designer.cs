@@ -11,8 +11,8 @@ using OfficialLab3.Data;
 namespace OfficialLab3.Migrations
 {
     [DbContext(typeof(OfficialLab3Context))]
-    [Migration("20220122040649_newkey")]
-    partial class newkey
+    [Migration("20220123021952_lkjhgfd")]
+    partial class lkjhgfd
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

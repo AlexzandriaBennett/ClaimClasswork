@@ -189,52 +189,50 @@ namespace OfficialLab3.Controllers
             return View(course);
         }
 
-    //    // POST: Courses/Enroll/5
-    //    // To protect from overposting attacks, enable the specific properties you want to bind to.
-    //    [HttpPost]
-    //    [ValidateAntiForgeryToken]
-    //    public async Task<IActionResult> Enroll(int id, [Bind("Id,Name,Students")] Course course)
-    //    {
-    //        if (id != course.Id)
-    //        {
-    //            return NotFound();
-    //        }
+       // POST: Courses/Enroll/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Enroll(int id, [Bind("Id", "Name")] Course course)
+        {
+            if (id != course.Id)
+            {
+                return NotFound();
+            }
+            var errors = ModelState.Values.SelectMany(v => v.Errors);
+            //course.Students.Add(new Student());
 
-    //        if (ModelState.IsValid)
-    //        {
-    //            try
-    //            {
-    //                _context.Update(course);
-    //                await _context.SaveChangesAsync();
-    //            }
-    //            catch (DbUpdateConcurrencyException)
-    //            {
-    //                if (!CourseExists(course.Id))
-    //                {
-    //                    return NotFound();
-    //                }
-    //                else
-    //                {
-    //                    throw;
-    //                }
-    //            }
-    //            return RedirectToAction(nameof(Index));
-    //        }
-    //        var items = _context.Student.Select(e => new SelectListItem
-    //        {
-    //            Text = e.Name,
-    //            Value = e.Id.ToString(),
-    //        }).ToList();
+            //var thisCourse = new Course();
 
-    //        items.Insert(0, new SelectListItem()
-    //        {
-    //            Text = "----Select----",
-    //            Value = string.Empty
+            //thisCourse.Id = id;
+            //thisCourse.Students = ;
 
-    //        });
+            //_context.Add(course.Students);
+            //await _context.SaveChangesAsync();
+           // return RedirectToAction(nameof(Index));
 
-    //        ViewBag.Items = items;
-    //        return View(course);
-    //    }
+            //if (ModelState.IsValid)
+            //{
+            //    try
+            //    {
+            //        _context.Update(course);
+            //        await _context.SaveChangesAsync();
+            //    }
+            //    catch (DbUpdateConcurrencyException)
+            //    {
+            //        if (!CourseExists(course.Id))
+            //        {
+            //            return NotFound();
+            //        }
+            //        else
+            //        {
+            //            throw;
+            //        }
+            //    }
+            //    return RedirectToAction(nameof(Index));
+            //}
+
+            return View(course);
+        }
     }
 }

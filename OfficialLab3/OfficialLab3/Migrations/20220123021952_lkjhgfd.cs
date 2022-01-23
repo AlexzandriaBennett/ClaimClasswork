@@ -4,7 +4,7 @@
 
 namespace OfficialLab3.Migrations
 {
-    public partial class removedstaffID : Migration
+    public partial class lkjhgfd : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
