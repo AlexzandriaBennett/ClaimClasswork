@@ -17,9 +17,7 @@ namespace OfficialLab3.Models
         [StringLength(200)]
         [Unicode(false)]
         public string? Name { get; set; }
-        public int TeacherId { get; set; }
-
-        public int StaffId { get; set; }    
+        public int TeacherId { get; set; }  
         
         [ForeignKey(nameof(TeacherId))]
         [InverseProperty("Courses")]

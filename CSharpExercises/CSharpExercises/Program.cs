@@ -18,7 +18,26 @@
         Console.WriteLine("Please enter numbers seperated by a hyphen(-) symbol");
         var input = Console.ReadLine();
         var newInput = input.Split('-');
-     
+        var numbers = new List<int>();
+        foreach (var i in newInput)
+        {
+            numbers.Add(int.Parse(i));
+        }
+
+        numbers.Sort();
+        var isConsecutive = true;
+
+        for (var i = 1; i < numbers.Count; i++)
+        {
+            if (numbers[i] != numbers[i - 1] + 1)
+            {
+                isConsecutive = false; 
+                break;
+            }
+        }
+
+        var message = isConsecutive ? "Consecutive" : "Not Consecutive";
+        Console.WriteLine(message);
 
         //for (int i = 0; i < newInput.Length; i++)
         //{
