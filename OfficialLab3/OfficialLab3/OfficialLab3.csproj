@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="POCO\" />
     <Folder Include="wwwroot\vids\" />
   </ItemGroup>
 

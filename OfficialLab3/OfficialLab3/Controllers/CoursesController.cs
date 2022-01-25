@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -49,6 +50,7 @@ namespace OfficialLab3.Controllers
         }
 
         // GET: Courses/Create
+        [Authorize]
         public IActionResult Create()
         {
             ViewData["Specialty"] = new SelectList(_context.Set<Teacher>(), "Specialty", "Specialty");
@@ -174,18 +176,41 @@ namespace OfficialLab3.Controllers
         // GET: Courses/Enroll/
         public async Task<IActionResult> Enroll(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
-            var course = await _context.Course.FindAsync(id);
-            
-            if (course == null)
+
+            //course.Students = await _context.Student.ToListAsync();
+
+            //List<SelectListItem> ListOfStudents = new List<SelectListItem>();
+
+            //ListOfStudents = course.Students.Select(x => new SelectListItem
+            //{
+
+            //    Value = x.Id.ToString(),
+            //    Text = x.Name,
+
+            //}).ToList();
+
+            //ViewData["Name"] =  _context.Student.Select(x => new SelectListItem
+            //{
+
+            //    Value = x.Id.ToString(),
+            //    Text = x.Name,
+
+            //}).ToList();
+
+
+            var course = new Course();
+            course.Students = new List<Student>();
+            course.Students.Select(x => new SelectListItem
             {
-                return NotFound();
-            }
-            ViewData["StudentId"] = new SelectList(_context.Set<Student>(), "Id", "Name", course.Students);
+
+                Value = x.Id.ToString(),
+                Text = x.Name,
+
+            }).ToList();
+
+
+            //ViewData["Name"] = new SelectList(_context.Set<Student>(), "Name", "Name");
             return View(course);
         }
 
@@ -193,13 +218,40 @@ namespace OfficialLab3.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Enroll(int id, [Bind("Id", "Name")] Course course)
+        //public async Task<IActionResult> Enroll(int id,[Bind("Id", "Name")] Course course)
+        public async Task<IActionResult> Enroll(int id, int studentId, [Bind("Id, StudentId, Name, Students")] Course course)
         {
             if (id != course.Id)
             {
                 return NotFound();
             }
+
+
+            var course1 = await _context.Course.FindAsync(id);
+            var student1 = await _context.Student.FindAsync(studentId);
+
+            //var relationship = new CourseStudent();
+            //relationship.CourseId = course.Id;
+            //relationship.StudentId = student.Id;
+
+            //Student tempStudent = new Student();
+            //tempStudent.Id = student.Id;
+            //tempStudent.Name = course.Name;
+
+
             var errors = ModelState.Values.SelectMany(v => v.Errors);
+            //course.Students.Add(student);
+            foreach (Course item in _context.Course)
+            {
+                //Console.WriteLine(item);
+                //Console.WriteLine(item.Students);
+                foreach (Student stud in item.Students)
+                {
+                    Console.WriteLine("Student: " + stud.Name + stud.Id);
+                }
+            }
+
+            //Console.WriteLine("Course ID: " + id + " Student Name: " + student.Id + " Student Name: " + student.Name);
             //course.Students.Add(new Student());
 
             //var thisCourse = new Course();
@@ -209,7 +261,7 @@ namespace OfficialLab3.Controllers
 
             //_context.Add(course.Students);
             //await _context.SaveChangesAsync();
-           // return RedirectToAction(nameof(Index));
+            // return RedirectToAction(nameof(Index));
 
             //if (ModelState.IsValid)
             //{
@@ -231,7 +283,13 @@ namespace OfficialLab3.Controllers
             //    }
             //    return RedirectToAction(nameof(Index));
             //}
+            ViewData["Name"] = _context.Student.Select(x => new SelectListItem
+            {
 
+                Value = x.Id.ToString(),
+                Text = x.Name,
+
+            }).ToList();
             return View(course);
         }
     }

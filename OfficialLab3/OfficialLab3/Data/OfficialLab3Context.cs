@@ -22,5 +22,7 @@ namespace OfficialLab3.Data
         public DbSet<OfficialLab3.Models.Staff> Staff { get; set; }
 
         public DbSet<OfficialLab3.Models.Teacher> Teacher { get; set; }
+
+       // public DbSet<OfficialLab3.Models.CourseStudent> CourseStudent { get; set; }    
     }
 }
