@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OfficialLab3.Data;
 
@@ -10,9 +11,10 @@ using OfficialLab3.Data;
 namespace OfficialLab3.Migrations
 {
     [DbContext(typeof(OfficialLab3Context))]
-    partial class OfficialLab3ContextModelSnapshot : ModelSnapshot
+    [Migration("20220125221800_foreignkey")]
+    partial class foreignkey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

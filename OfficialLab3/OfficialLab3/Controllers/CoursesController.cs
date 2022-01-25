@@ -176,19 +176,19 @@ namespace OfficialLab3.Controllers
         // GET: Courses/Enroll/
         public async Task<IActionResult> Enroll(int? id)
         {
+            var course = await _context.Course.FindAsync(id);
 
+            course.Students = await _context.Student.ToListAsync();
 
-            //course.Students = await _context.Student.ToListAsync();
+            List<SelectListItem> ListOfStudents = new List<SelectListItem>();
 
-            //List<SelectListItem> ListOfStudents = new List<SelectListItem>();
+            ListOfStudents = course.Students.Select(x => new SelectListItem
+            {
 
-            //ListOfStudents = course.Students.Select(x => new SelectListItem
-            //{
+                Value = x.Id.ToString(),
+                Text = x.Name,
 
-            //    Value = x.Id.ToString(),
-            //    Text = x.Name,
-
-            //}).ToList();
+            }).ToList();
 
             //ViewData["Name"] =  _context.Student.Select(x => new SelectListItem
             //{
@@ -199,15 +199,15 @@ namespace OfficialLab3.Controllers
             //}).ToList();
 
 
-            var course = new Course();
-            course.Students = new List<Student>();
-            course.Students.Select(x => new SelectListItem
-            {
+            //var course = new Course();
+            //course.Students = new List<Student>();
+            //course.Students.Select(x => new SelectListItem
+            //{
 
-                Value = x.Id.ToString(),
-                Text = x.Name,
+            //    Value = x.Id.ToString(),
+            //    Text = x.Name,
 
-            }).ToList();
+            //}).ToList();
 
 
             //ViewData["Name"] = new SelectList(_context.Set<Student>(), "Name", "Name");
@@ -219,7 +219,7 @@ namespace OfficialLab3.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         //public async Task<IActionResult> Enroll(int id,[Bind("Id", "Name")] Course course)
-        public async Task<IActionResult> Enroll(int id, int studentId, [Bind("Id, StudentId, Name, Students")] Course course)
+        public async Task<IActionResult> Enroll(int id, [Bind("Id, Students")] Course course)
         {
             if (id != course.Id)
             {
@@ -227,8 +227,8 @@ namespace OfficialLab3.Controllers
             }
 
 
-            var course1 = await _context.Course.FindAsync(id);
-            var student1 = await _context.Student.FindAsync(studentId);
+           // var course = await _context.Course.FindAsync(id);
+           // var student1 = await _context.Student.FindAsync(studentId);
 
             //var relationship = new CourseStudent();
             //relationship.CourseId = course.Id;
@@ -240,16 +240,19 @@ namespace OfficialLab3.Controllers
 
 
             var errors = ModelState.Values.SelectMany(v => v.Errors);
+
+            _context.Update(course);
+            await _context.SaveChangesAsync();
             //course.Students.Add(student);
-            foreach (Course item in _context.Course)
-            {
-                //Console.WriteLine(item);
-                //Console.WriteLine(item.Students);
-                foreach (Student stud in item.Students)
-                {
-                    Console.WriteLine("Student: " + stud.Name + stud.Id);
-                }
-            }
+            //foreach (Course item in _context.Course)
+            //{
+            //    //Console.WriteLine(item);
+            //    //Console.WriteLine(item.Students);
+            //    foreach (Student stud in item.Students)
+            //    {
+            //        Console.WriteLine("Student: " + stud.Name + stud.Id);
+            //    }
+            //}
 
             //Console.WriteLine("Course ID: " + id + " Student Name: " + student.Id + " Student Name: " + student.Name);
             //course.Students.Add(new Student());

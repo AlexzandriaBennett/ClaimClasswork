@@ -14,13 +14,12 @@ namespace OfficialLab3.Models
         }
 
         [Key]
+        [ForeignKey("StudentId")]
+        [InverseProperty(nameof(Course.Students))]
         public int Id { get; set; }
         [StringLength(200)]
         [Unicode(false)]
         public string Name { get; set; } = null!;
-
-        [ForeignKey("StudentId")]
-       // [InverseProperty(nameof(Course.Students))]
         public virtual ICollection<Course> Courses { get; set; }
     }
 }

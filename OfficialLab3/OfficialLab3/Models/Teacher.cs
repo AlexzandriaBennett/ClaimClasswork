@@ -18,7 +18,6 @@ namespace OfficialLab3.Models
         [Unicode(false)]
         public string? Specialty { get; set; }
 
-        [InverseProperty(nameof(Course.Teacher))]
         public virtual ICollection<Course> Courses { get; set; }
 
 
