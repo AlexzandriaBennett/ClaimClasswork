@@ -5,43 +5,70 @@ class Program
     static void Main(string[] args)
     {
 
-        //Console.WriteLine("This is a test");
+        //Exercise 1 through 5 relate to strings
         //Exercise1();
         //Exercise2();
         //Exercise3();
         //Exercise4();
         //Exercise5();
 
-        Exercice6();
+        //Exercise 6-10 relate to lists and arrays
+        //Exercice6();
+        Exercise7();
 
+
+    }
+
+    // Write a program and ask the user to enter their name.
+    // Use an array to reverse the name and then store the result in a new string. 
+    // Display the reversed name on the console.
+    private static void Exercise7()
+    {
+        Console.WriteLine("Please enter your name");
+        char[] input = Console.ReadLine().ToCharArray();
+        var inputReversed = input.Reverse().ToString;
+        
+        Console.WriteLine(inputReversed);
+       
     }
 
 
     // Summary:
     // Write a program and continuously ask the user to enter different names, until the user presses Enter 
-    // (without supplying a name). Depending on the number of names provided, display a message based on the above pattern.
-   
+    // (without supplying a name). Depending on the number of names provided, display a message based on the pattern.
+
     private static void Exercice6()
     {
-        Console.WriteLine("Please enter names who like your post and press enter \nwhen finished leave empty and press enter");
-        var input = Console.ReadLine();
         var listOfNames = new List<string>();
-        while (input.Length > 0)
+        while (true)
         {
-            listOfNames.Add(input);
-
-            
-        }
-        else
-        {
-            foreach(var name in listOfNames)
+            Console.WriteLine("Please enter names who like your post and press enter \nwhen finished leave empty and press enter");
+            var input = Console.ReadLine();
+            if (input.Length <= 0)
             {
-                Console.WriteLine(name);
+                break;
             }
+            listOfNames.Add(input);
+        }
+       if (listOfNames.Count == 0)
+        {
+            Console.WriteLine("no one likes this");
+        }
+       else if (listOfNames.Count == 1)
+        {
+            Console.WriteLine(listOfNames[0] + " likes your post");
+        }
+       else if(listOfNames.Count == 2)
+        {
+            Console.WriteLine(listOfNames[0] + " and " + listOfNames[1] + " like your post");
+        }
+       else if( listOfNames.Count > 2)
+        {
+            Console.WriteLine(listOfNames[0] + ", " + listOfNames[1] + ", and " + (listOfNames.Count -2) + " others like your post");
         }
 
-        
-        
+
+
 
     }
 
