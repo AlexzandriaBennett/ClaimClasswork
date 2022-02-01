@@ -10,6 +10,7 @@ namespace stloumustdo.Controllers
 {
     public class AccountController : Controller
     {
+
         public async Task Login(string returnUrl = "/")
         {
             var authenticationProperties = new LoginAuthenticationPropertiesBuilder()
@@ -33,6 +34,8 @@ namespace stloumustdo.Controllers
         [Authorize]
         public IActionResult Profile()
         {
+
+
             return View(new UserProfileViewModel()
             {
                 Name = User.Identity.Name,

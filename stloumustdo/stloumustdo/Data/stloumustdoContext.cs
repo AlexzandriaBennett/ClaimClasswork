@@ -20,8 +20,11 @@ namespace stloumustdo.Data
 
         public DbSet<stloumustdo.Models.LocalAttraction> LocalAttractions { get; set; }
 
-
         public DbSet<stloumustdo.Models.StatewideOutdoors> StatewideOutdoors { get; set; }
+
+        public DbSet<stloumustdo.Models.BucketList> BucketList { get; set; }
+
+
 
     }
 }

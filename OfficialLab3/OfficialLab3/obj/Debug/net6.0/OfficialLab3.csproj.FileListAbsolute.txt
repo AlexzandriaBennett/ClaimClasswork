@@ -528,3 +528,4 @@ C:\Code\Classwork\ClaimClasswork\OfficialLab3\OfficialLab3\obj\Debug\net6.0\Offi
 C:\Code\Classwork\ClaimClasswork\OfficialLab3\OfficialLab3\obj\Debug\net6.0\ref\OfficialLab3.dll
 C:\Code\Classwork\ClaimClasswork\OfficialLab3\OfficialLab3\obj\Debug\net6.0\OfficialLab3.pdb
 C:\Code\Classwork\ClaimClasswork\OfficialLab3\OfficialLab3\obj\Debug\net6.0\OfficialLab3.genruntimeconfig.cache
+C:\Code\Classwork\ClaimClasswork\OfficialLab3\OfficialLab3\obj\Debug\net6.0\OfficialLab3.csproj.AssemblyReference.cache

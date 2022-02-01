@@ -11,10 +11,12 @@
 <html>
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewporturl()nitial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
@@ -27,11 +29,10 @@ body, html {
 .bgimg-1 {
   background-position: center;
   background-size: cover;
-  background-image: url("/w3images/mac.jpg");
+  background-image: url('@Url.Content("~/css/stlouis.jpg")');
   min-height: 100%;
-}
-
-.w3-bar .w3-button {
+}/*https://images.unsplash.com/photo-1514893011-72dfa15bd29c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1334&q=80*/
+-moz-text-size-adjust-bar .w3-button {
   padding: 16px;
 }
 </style>
@@ -46,7 +47,7 @@ body, html {
   </div>
 </div>
 
-<!-- Sidebar on small screens when clicking the menu icon -->
+@*<!-- Sidebar on small screens when clicking the menu icon -->
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
   <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
@@ -54,49 +55,46 @@ body, html {
   <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
   <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
   <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
-</nav>
+</nav>*@
 
 <!-- Header with full-height image -->
 <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
   <div class="w3-display-left w3-text-white" style="padding:48px">
-    <span class="w3-jumbo w3-hide-small">Start something that matters</span><br>
-    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>
-    <span class="w3-large">Stop wasting valuable time with projects that just isn't you.</span>
-    <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more and start today</a></p>
+    <span class="w3-jumbo w3-hide-small">Welcome to the Gateway to the West!</span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Welcome to the Gateway to the West!</span><br>
+    <span class="w3-large">Whether you are a local or passing through, there is plenty to see and do</span>
+    <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">start exploring</a></p>
   </div> 
   <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <a class="fa fa-facebook-official w3-hover-opacity" target="_blank" href="https://facebook.com" style="font-size: 50px"></a>
+    <a class="fa fa-instagram w3-hover-opacity" target="_blank"  href="https://instagram.com"style="font-size: 51px" ></a>
+
   </div>
 </header>
 
 <!-- About Section -->
 <div class="w3-container" style="padding:128px 16px" id="about">
-  <h3 class="w3-center">ABOUT THE COMPANY</h3>
-  <p class="w3-center w3-large">Key features of our company</p>
+  <h3 class="w3-center">LETS GET EXPLORING</h3>
+  <p class="w3-center w3-large">Key categories to plan your adventure</p>
   <div class="w3-row-padding w3-center" style="margin-top:64px">
     <div class="w3-quarter">
-      <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
-      <p class="w3-large">Responsive</p>
+      <i class="fa fa-cutlery w3-margin-bottom w3-jumbo w3-center"></i>
+      <p class="w3-large">Resturaunts</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
     </div>
     <div class="w3-quarter">
-      <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Passion</p>
+      <i class="fa fa-coffee w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Cafes</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
     </div>
     <div class="w3-quarter">
-      <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Design</p>
+      <i class="fa fa-university w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Attractions</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
     </div>
     <div class="w3-quarter">
-      <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Support</p>
+      <i class="fa fa-tree w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Outdoors</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
     </div>
   </div>
@@ -104,31 +102,35 @@ body, html {
 <!-- Team Section -->
 <div class="w3-container" style="padding:128px 16px" id="team">
   <h3 class="w3-center">THE TEAM</h3>
-  <p class="w3-center w3-large">The ones who runs this company</p>
-  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
-    <div class="w3-col l3 m6 w3-margin-bottom">
+  <p class="w3-center w3-large">The one who runs this company</p>
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-center l3 m6 w3-margin-bottom  w3-center">
       <div class="w3-card">
-        <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+        <img src=~/css/me3.jpg alt="Alex" style="width:300px">
         <div class="w3-container">
-          <h3>John Doe</h3>
+          <h3>Alex Bennett</h3>
           <p class="w3-opacity">CEO & Founder</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+          <p style="font-weight: 200;font-size: 18px;">When I moved to St. Louis, I did know anyone. I created this list to help me get out of my house and explore my new city.
+              Since I have lived here for over a year now, the list just keeps growing with hidden gems. I hope you can enjoy St. Louis as much
+              as I have. Even if you have lived here your while live, are passing through, or planned a trip, there is tons for you on these lists
+          </p>
+          <p><button class="w3-button w3-light-grey w3-center"><a class="fa fa-envelope" a href="mailto:alexbennett12@live.com"></a> Contact</button></p>
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64">
   <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
   <div class="w3-xlarge w3-section">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <a class="fa fa-facebook-official w3-hover-opacity" target="_blank" href="https://facebook.com"></a>
+    <a class="fa fa-instagram w3-hover-opacity" target="_blank"  href="https://instagram.com"></a>
   </div>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <a> &copy; 2022 - stloumustdo - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> | Powered by <a href="https://github.com/AlexzandriaBennett" title="Alex Bennett" target="_blank" class="w3-hover-text-green">Alex Bennett</a></a>
+@*  <div class=" border-top footer text-muted container">
+            &copy; 2022 - stloumustdo - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>*@
 </footer>
  
 <script>
+ 
+
 // Modal Image Gallery
 function onClick(element) {
   document.getElementById("img01").src = element.src;
